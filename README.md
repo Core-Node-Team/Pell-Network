@@ -214,7 +214,7 @@ Save your pubkey
 rm -rf /root/validator.json
 ```
 ```
-cat > ./validator.json << EOF
+sudo tee ./validator.json > /dev/null << EOF
 {
 	"pubkey": $(pellcored tendermint show-validator),
 	"amount": "1000000000000000000apell",
