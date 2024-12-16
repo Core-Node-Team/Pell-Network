@@ -8,7 +8,11 @@
  * [Topluluk Twitter](https://twitter.com/corenodeHQ)<br>
  * [Discord](https://discord.com/invite/0glabs)<br>
 
-
+#### lib hatası alıyorsanız
+```
+echo 'export LD_LIBRARY_PATH=/root/.pellcored/lib:$LD_LIBRARY_PATH' >> ~/.bash_profile
+source $HOME/.bash_profile
+```
 ### ➡️ Explorer
 
 https://explorer.corenodehq.com/Pell-Testnet
