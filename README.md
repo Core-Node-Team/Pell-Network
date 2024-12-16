@@ -180,8 +180,8 @@ sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.pellcored/config/conf
 ### ➡️ Starter Snap (thx josephtran)
 ```
 pellcored tendermint unsafe-reset-all --home $HOME/.pellcored
-if curl -s --head curl https://pell.j-node.net/pell_snapshot.lz4 | head -n 1 | grep "200" > /dev/null; then
-  curl https://pell.j-node.net/pell_snapshot.lz4 | lz4 -dc - | tar -xf - -C $HOME/.pellcored
+if curl -s --head curl http://37.120.189.81/pell_testnet/pell_snapshot.lz4 | head -n 1 | grep "200" > /dev/null; then
+  curl http://37.120.189.81/pell_testnet/pell_snapshot.lz4 | lz4 -dc - | tar -xf - -C $HOME/.pellcored
     else
   echo no have snap
 fi
