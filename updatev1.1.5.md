@@ -46,3 +46,6 @@ Environment="LD_LIBRARY_PATH=/root/.pellcored/lib:$LD_LIBRARY_PATH"
 WantedBy=multi-user.target
 EOF
 ```
+```
+systemctl daemon-reload
+```
