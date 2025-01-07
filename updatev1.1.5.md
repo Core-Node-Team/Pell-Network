@@ -12,7 +12,7 @@
 
 ```
 cd
-wget -O pellcored https://github.com/0xPellNetwork/network-config/releases/download/v1.1.5-ignite/pellcored-v1.1.5-linux-amd64
+wget -O pellcored https://github.com/0xPellNetwork/network-config/releases/download/v1.1.5/pellcored-v1.1.5-linux-amd64
 chmod +x ./pellcored
 ```
 ```
