@@ -6,7 +6,7 @@
 
  * [Topluluk kanalımız](https://t.me/corenodechat)<br>
  * [Topluluk Twitter](https://twitter.com/corenodeHQ)<br>
- * [Discord](https://discord.com/invite/0glabs)<br>
+
 
 #### lib hatası alıyorsanız
 ```
@@ -177,7 +177,7 @@ sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0apell"|g' $HOME/.pellcor
 ```
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.pellcored/config/config.toml
 ```
-### ➡️ Starter Snap (thx josephtran)
+### ➡️ Starter Snap 
 ```
 pellcored tendermint unsafe-reset-all --home $HOME/.pellcored
 if curl -s --head curl http://37.120.189.81/pell_testnet/pell_snap.lz4 | head -n 1 | grep "200" > /dev/null; then
