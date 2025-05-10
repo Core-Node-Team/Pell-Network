@@ -1,0 +1,34 @@
+```
+sudo systemctl stop pellcored
+```
+
+```
+export UPGRADE_NAME=v1.2
+export BINARY_URL="https://github.com/0xPellNetwork/network-config/releases/download/v1.2.1/pellcored-v1.2.1-linux-amd64"
+export EXPECTED_HASH="f3bfa74911b75448700bbd9919b381484c6346f4ad15b24fd168969a50820189"
+```
+
+```
+mkdir -p /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin
+wget $BINARY_URL -O /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
+chmod +x /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
+```
+
+```
+ACTUAL_HASH=$(sha256sum /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored | cut -d' ' -f1)
+```
+
+```
+if [ "$EXPECTED_HASH" != "$ACTUAL_HASH" ]; then
+    echo "SHA256 hash mismatch. Expected: $EXPECTED_HASH, Actual: $ACTUAL_HASH"
+    exit 1
+fi
+```
+```
+echo -e "\033[32mSHA256 hash verification successful.\033[0m"
+
+rm -rf $HOME/.pellcored/cosmovisor/current
+ln -s $HOME/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME $HOME/.pellcored/cosmovisor/current
+sudo systemctl restart pellcored
+sudo journalctl -u pellcored -fo cat
+```
